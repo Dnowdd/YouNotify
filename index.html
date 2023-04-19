@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Popup</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <!-- <div class="status status-error">
+        <div class="icon">!</div>
+        <div class="separate"></div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempora nemo consequuntur commodi. Excepturi, eius fugit! Id fugit debitis, dolorum aspernatur magnam, labore repudiandae ipsam repellat necessitatibus et voluptas iure.</div>
+        <div class="close">X</div>
+    </div>
+    <div class="status status-warn">
+        <div class="icon">!</div>
+        <div class="separate"></div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempora nemo consequuntur commodi. Excepturi, eius fugit! Id fugit debitis, dolorum aspernatur magnam, labore repudiandae ipsam repellat necessitatibus et voluptas iure.</div>
+        <div class="close">X</div>
+    </div>
+    <div class="status status-correct">
+        <div class="icon">!</div>
+        <div class="separate"></div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempora nemo consequuntur commodi. Excepturi, eius fugit! Id fugit debitis, dolorum aspernatur magnam, labore repudiandae ipsam repellat necessitatibus et voluptas iure.</div>
+        <div class="close">X</div>
+    </div> -->
+    <div class="example">
+        <div class="elipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p><span class="callFunction">callNotification</span><span class="functionEscope">(</span><br>
+            <span class="string line">'bottom-right'</span><span class="functionBr">,</span><span class="comment">/*popup location (top-left | top-right | bottom-left | bottom-right)*/</span><br>
+            <span class="string line">'correct'</span><span class="functionBr">,</span><span class="comment">/*popup type (correct | warn | error)*/</span><br>
+            <span class="string line">'Good. This is an example for popup!'</span><span class="functionBr">,</span><span class="comment">/*message*/</span><br>
+            <span class="bol line">10000</span><span class="functionBr">,</span><span class="comment">/*popup duration in mileseconds (0 = infinite)*/</span><br>
+            <span class="string line">'check'</span><span class="functionBr">,</span><span class="comment">/*Icon text or google icon if GoogleIcons is true*/</span><br>
+            <span class="bol line">true</span><span class="comment">/*GoogleIcons (true | false) /you need add googleicons code*/</span><br>
+        <span class="functionEscope">)</span><span class="functionBr">;</span></p>
+    </div>
+    <div class="button">
+        <button type="button">Copy to clipboard!</button>
+        <button type="button" onclick="callNotification('bottom-right', 'correct', 'Good. This is an example for popup!', 10000, 'check', true)">Execute function.</button>
+    </div>
+</body>
+</html>

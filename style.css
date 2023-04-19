@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --warn-principal: rgb(255, 166, 0);
+    --warn-secondary: rgb(255, 208, 147, 0.3);
+
+    --error-principal: rgb(255, 41, 41);
+    --error-secondary: rgb(255, 115, 115, 0.3);
+
+    --correct-principal: rgb(41, 185, 41);
+    --correct-secondary: rgb(116, 255, 116, 0.3);
+}
+.status{
+    font-family: 'Roboto', sans-serif;
+
+    position: fixed;
+
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 15px;
+    width: 30vw;
+
+    border-radius: 20px;
+    border: 3px solid black;
+    padding: 16px 15px;
+    padding-right: 32px;
+    margin: 10px;
+
+    animation: dropLinear .6s;
+}
+@keyframes dropLinear {
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+.top-left{
+    top: 0;
+    left: 0;
+}
+.top-right{
+    top: 0;
+    right: 0;
+}
+.bottom-left{
+    bottom: 0;
+    left: 0;
+}
+.bottom-right{
+    bottom: 0;
+    right: 0;
+}
+.status > .separate{
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.status > .icon{
+    text-align: center;
+    width: 60px;
+    font-size: 46px;
+}
+.status > .message{
+    font-size: 12px;
+}
+.status > .close{
+    position: absolute;
+    --size-close-button: 30px;
+    top: calc(50% - calc(--size-close-button) / 2);
+    right: 7px;
+
+    background-color: rgba(128, 128, 128, 0.1);
+
+    border-radius: 5px;
+    width: var(--size-close-button);
+    height: var(--size-close-button);
+
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    transition: .3s;
+    cursor: pointer;
+
+    color: var(--principal-color);
+
+    opacity: 0%;
+}
+.status:hover > .close{
+    opacity: 100%;
+}
+.status > .close:hover{
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+
+
+
+
+.status-warn{
+    --secondary-color: var(--warn-secondary);
+    background-color: var(--secondary-color);
+    --principal-color: var(--warn-principal);
+    border-color: var(--principal-color);
+}
+.status-error{
+    --secondary-color: var(--error-secondary);
+    background-color: var(--secondary-color);
+    --principal-color: var(--error-principal);
+    border-color: var(--principal-color);
+}
+.status-correct{
+    --secondary-color: var(--correct-secondary);
+    background-color: var(--secondary-color);
+    --principal-color: var(--correct-principal);
+    border-color: var(--principal-color);
+}
+
+.destroyStatus{
+    animation: forwards destroy .3s;
+}
+@keyframes destroy {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+        display: none;   
+    }
+}
+.destroyStatus2{
+    width: 0;
+    height: 0;
+    transform: translateX(10000px);
+    overflow: hidden;
+}
