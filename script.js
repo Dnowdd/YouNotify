@@ -43,7 +43,6 @@ function callNotification(location, type, message, duration, icon, google){
         closeNotification(timestamp,duration)
     }
 }
-
 function closeNotification(timestamp,time){
     setTimeout(function(){
         var statusDiv = document.getElementById('statusDiv-'+timestamp);
@@ -53,34 +52,3 @@ function closeNotification(timestamp,time){
         }, 300 /* same time in css - line 132 */);
     }, time);
 }
-
-window.onload = () => {
-    callNotification(
-        'top-left',
-        'error',
-        'Todos os resultados estão errados!',
-        0,
-        'error',
-        true
-    );
-    callNotification(
-        'top-right',
-        'warn',
-        'Você necessita preencher todos os campos do formulário.',
-        0,
-        'warning',
-        true
-    );
-    callNotification(
-        'bottom-left',
-        'correct',
-        'Parabéns! Cadastro realizado com sucesso.',
-        0,
-        '!',
-        false
-    );
-}
-
-/*
-callNotification('bottom-right', 'correct', 'Teste de mensagem correta', 'check', true)
- */

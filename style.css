@@ -2,12 +2,15 @@
 :root{
     --warn-principal: rgb(255, 166, 0);
     --warn-secondary: rgb(255, 208, 147, 0.3);
+    --warn-secondary-opacity1: rgb(255, 208, 147, 0.8);
 
     --error-principal: rgb(255, 41, 41);
     --error-secondary: rgb(255, 115, 115, 0.3);
+    --error-secondary-opacity1: rgb(255, 115, 115, 0.8);
 
     --correct-principal: rgb(41, 185, 41);
     --correct-secondary: rgb(116, 255, 116, 0.3);
+    --correct-secondary-opacity1: rgb(116, 255, 116, 0.8);
 }
 .status{
     font-family: 'Roboto', sans-serif;
@@ -145,4 +148,24 @@
     height: 0;
     transform: translateX(10000px);
     overflow: hidden;
+}
+
+@media screen and (max-width: 575px) {
+    .status{
+        box-sizing: border-box !important;
+        min-width: 80vw !important;
+        left: calc(50% - calc(80vw / 2));
+    }
+    .status-warn{
+        --secondary-color: var(--warn-secondary-opacity1);
+        background-color: var(--secondary-color);
+    }
+    .status-error{
+        --secondary-color: var(--error-secondary-opacity1);
+        background-color: var(--secondary-color);
+    }
+    .status-correct{
+        --secondary-color: var(--correct-secondary-opacity1);
+        background-color: var(--secondary-color);
+    }
 }
